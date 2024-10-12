@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | Laptop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Scroll Reveal Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .animate-reveal {
+            animation: fadeInUp 0.6s ease-in-out forwards;
+        }
+
+        /* Bounce animations for decorative circles */
+        .animate-bounce-slow {
+            animation: bounce 6s infinite ease-in-out;
+        }
+
+        .animate-pulse-fast {
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-indigo-600">LaptopStore</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-500">Home</a>
+                    <a href="#products" class="text-gray-700 hover:text-indigo-500">Products</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-500">About</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-500">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Home</a>
+            <a href="#products" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Products</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">About</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-screen flex items-center justify-center px-6 relative overflow-hidden font-poppins">
+        <div class="absolute top-0 left-0 w-80 h-80 bg-indigo-300 opacity-30 rounded-full blur-xl animate-bounce-slow"></div>
+        <div class="absolute bottom-0 right-0 w-60 h-60 bg-purple-400 opacity-40 rounded-full blur-lg animate-pulse-fast"></div>
+        <div class="text-center z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">
+                Power Your Life with Premium Laptops
+            </h1>
+            <p class="text-xl text-gray-100 mb-6">
+                Get the latest models at unbeatable prices with free shipping on all orders.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="bg-white text-indigo-600 px-8 py-4 rounded-md text-lg font-semibold hover:bg-indigo-600 hover:text-white transition-transform transform hover:scale-110 shadow-lg">
+                    Shop Now
+                </a>
+                <a href="#" class="bg-gray-100 text-gray-800 px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-300 transition-transform transform hover:scale-110 shadow-lg">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+ <!-- Products Section -->
+<section id="products" class="py-12 px-4 sm:px-8 bg-gray-100">
+  <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">
+      Our Latest Products
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Product Cards -->
+      <div class="product-card opacity-0 translate-y-10 transition-all duration-500 ease-in-out bg-white p-6 rounded-lg shadow-md transform hover:scale-105 w-full max-w-xs mx-auto">
+          <img src="https://i.pinimg.com/564x/c6/5b/c2/c65bc29c3e3d927fa15e93209ee1a52d.jpg" 
+              alt="Gaming Laptop" class="w-full h-40 object-cover rounded-md mb-3">
+          <h3 class="text-lg font-semibold mb-1">Gaming Laptop</h3>
+          <p class="text-gray-600 mb-3 text-sm">High-performance gaming laptop with the latest GPU.</p>
+          <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transform hover:scale-110 transition-transform">
+              Order Now
+          </button>
+      </div>
+
+      <div class="product-card opacity-0 translate-y-10 transition-all duration-500 ease-in-out bg-white p-6 rounded-lg shadow-md transform hover:scale-105 w-full max-w-xs mx-auto">
+          <img src="https://i.pinimg.com/564x/f9/c4/8e/f9c48e3f0a4e0803ee4af9df300491ff.jpg" 
+              alt="Ultrabook" class="w-full h-40 object-cover rounded-md mb-3">
+          <h3 class="text-lg font-semibold mb-1">Ultrabook</h3>
+          <p class="text-gray-600 mb-3 text-sm">Sleek and lightweight laptop for productivity.</p>
+          <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transform hover:scale-110 transition-transform">
+              Order Now
+          </button>
+      </div>
+
+      <div class="product-card opacity-0 translate-y-10 transition-all duration-500 ease-in-out bg-white p-6 rounded-lg shadow-md transform hover:scale-105 w-full max-w-xs mx-auto">
+          <img src="https://i.pinimg.com/474x/8e/c8/73/8ec873946f90e085c2c2b9d91bf45554.jpg" 
+              alt="Workstation" class="w-full h-40 object-cover rounded-md mb-3">
+          <h3 class="text-lg font-semibold mb-1">Workstation</h3>
+          <p class="text-gray-600 mb-3 text-sm">Powerful workstation for content creation.</p>
+          <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transform hover:scale-110 transition-transform">
+              Order Now
+          </button>
+      </div>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal function to add 'visible' class when elements are in view
+  function revealOnScroll() {
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach((card) => {
+          const cardPosition = card.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (cardPosition < windowHeight - 100) {
+              card.classList.add('opacity-100', 'translate-y-0');
+          }
+      });
+  }
+
+  // Event listener for scroll
+  window.addEventListener('scroll', revealOnScroll);
+</script>
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-16 px-6 bg-indigo-50">
+  <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">
+      What Our Customers Say
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Testimonial Card 1 -->
+      <div class="testimonial-card opacity-0 translate-y-10 transition-all duration-500 ease-in-out bg-white p-6 rounded-lg shadow-md w-full max-w-xs mx-auto">
+          <p class="text-sm text-gray-600 mb-4">
+              "The gaming laptop I bought exceeded my expectations. Amazing performance!"
+          </p>
+          <div class="flex items-center space-x-3">
+           
+              <div>
+                  <h4 class="text-sm font-semibold">Sarah Parker</h4>
+                  <span class="text-xs text-gray-500">Verified Customer</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="testimonial-card opacity-0 translate-y-10 transition-all duration-500 ease-in-out bg-white p-6 rounded-lg shadow-md w-full max-w-xs mx-auto">
+          <p class="text-sm text-gray-600 mb-4">
+              "I love my ultrabook! It's so lightweight and perfect for traveling."
+          </p>
+          <div class="flex items-center space-x-3">
+            
+              <div>
+                  <h4 class="text-sm font-semibold">John Doe</h4>
+                  <span class="text-xs text-gray-500">Verified Customer</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- Testimonial Card 3 -->
+      <div class="testimonial-card opacity-0 translate-y-10 transition-all duration-500 ease-in-out bg-white p-6 rounded-lg shadow-md w-full max-w-xs mx-auto">
+          <p class="text-sm text-gray-600 mb-4">
+              "This workstation has transformed my content creation workflow!"
+          </p>
+          <div class="flex items-center space-x-3">
+          
+              <div>
+                  <h4 class="text-sm font-semibold">Emma Smith</h4>
+                  <span class="text-xs text-gray-500">Verified Customer</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal function for testimonial cards
+  function revealTestimonials() {
+      const testimonialCards = document.querySelectorAll('.testimonial-card');
+      testimonialCards.forEach((card) => {
+          const cardPosition = card.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (cardPosition < windowHeight - 100) {
+              card.classList.add('opacity-100', 'translate-y-0');
+          }
+      });
+  }
+
+  // Event listener for scroll
+  window.addEventListener('scroll', revealTestimonials);
+</script>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+  <div class="max-w-2xl mx-auto text-center space-y-6">
+      <h2 class="text-4xl font-bold">Contact Us</h2>
+      <p class="text-lg text-gray-200">
+          Reach out to us via email for any inquiries or support. We are always here to help!
+      </p>
+
+      <a href="mailto:laptopstore@gmail.com" 
+          class="inline-block bg-white text-indigo-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-indigo-100 transition-transform transform hover:scale-105">
+          laptopstore@gmail.com
+      </a>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    background: linear-gradient(to right, #6366f1, #7e3af2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.top-left {
+    width: 80px;
+    height: 80px;
+    background-color: #6366f1;
+    top: 0;
+    left: 0;
+}
+
+.bottom-right {
+    width: 60px;
+    height: 60px;
+    background-color: #7e3af2;
+    bottom: 0;
+    right: 0;
+}
+
+.products {
+    padding: 4rem 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.product {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-in {
+    animation: slideIn 1s forwards;
+}
+
+.reveal.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
