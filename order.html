@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | Laptop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-poppins">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600">LaptopStore</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Form Section -->
+    <section class="py-12 px-4 sm:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">Order Your Laptop</h2>
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+            <form id="orderForm">
+                <div id="product-info" class="mb-4 text-center">
+                    <h3 class="text-xl font-semibold" id="product-name"></h3>
+                    <p class="text-gray-600" id="product-price"></p>
+                </div>
+                <label class="block mb-2">Name:</label>
+                <input type="text" name="name" class="border border-gray-300 p-2 w-full mb-4 rounded" required>
+                <label class="block mb-2">Phone Number:</label>
+                <input type="tel" name="phone" class="border border-gray-300 p-2 w-full mb-4 rounded" required>
+                <label class="block mb-2">Address:</label>
+                <input type="text" name="address" class="border border-gray-300 p-2 w-full mb-4 rounded" required>
+                <label class="block mb-2">Quantity:</label>
+                <input type="number" name="quantity" class="border border-gray-300 p-2 w-full mb-4 rounded" min="1" required>
+                <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Submit Order</button>
+            </form>
+            <div id="confirmation-message" class="hidden mt-6 text-center text-lg text-green-600"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-white">
+        <div class="text-center text-gray-600">© 2024 LaptopStore. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Get URL parameters for product details
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('product');
+        const productPrice = urlParams.get('price');
+
+        // Display product information in the order form
+        document.getElementById('product-name').innerText = productName;
+        document.getElementById('product-price').innerText = `Price: $${productPrice}`;
+
+        // Handle form submission
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Show confirmation message
+            const confirmationMessage = document.getElementById('confirmation-message');
+            confirmationMessage.innerText = 'Your order has been submitted successfully! We will call you for confirmation shortly.';
+            confirmationMessage.classList.remove('hidden');
+            confirmationMessage.classList.add('animate__animated', 'animate__fadeIn'); 
+
+        
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
